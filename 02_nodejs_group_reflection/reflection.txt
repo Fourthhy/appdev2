@@ -1,0 +1,13 @@
+   • As a developer in our project, I'm a part of making the team's vision into reality, using my knowledge in developing is fully utilized and learned something new along the way. There are a lot of challenges in developing such as making a feature functional and make it dynamic, to be honest we are having a hard time of utilizing ShadCn as our main source of component designs since they are fixed designs and it's hard to pair our custom components to those. And as expected, it doesn't turn out good as we envision before. 
+
+   • Coding for me is not that hard, I just need time to learn things and try it on my own to see the beauty and dynamics of it.
+   
+   • To be honest, collaborating with others in coding projects is the biggest challenge for me, I guess it is because I was accustomed to doing projects alone, learning alone and progressing by myself, although I'm conducting some coding lessons with my classmates, it is still far of making a project happen. But I learned to communicate well with others, being transparent to my progress for the benefit of the whole as well as teaching others what things should they look out for if there is some.
+
+   • We went well by our confidence, we have powerhourses in our group but like mine, collaborating is also a hindrance for them since they (and me I guess) are comfortable on doing tasks alone. The team can be more improved by establishing a clear connection to each other, documenting all of the information that will serve as a basis in the project making and follow the schedule. 
+   
+   • Yes we conduct meetings, but most of them are very short, but in this semester we are expecting to have lenghty meetings, I've always wondered how can the other groups gone through a long meeting and then our group just conducts 10 - 20 minutes of meeting just to check progress, not brainstorming - which the other group does.
+
+   • Delegation of tasks are very clear, but sometimes it overlaps, because of excitement and boost of confidence I guess, each of us have tasks to do, but because some things are unclear like where will the SQA be operational, they were left waiting for the PM to do something.
+
+   • As a developer, I saw almost all of the lacks on my skill, I lack in making files separated by concerns, I lack in documentation or creating a document where I can follow throughout the coding process, the resources and things that can really be used to improve the project and improve my skills and etc. And just like before, I can improve myself in creating personal projects that can utilize the things I can learn in the institution and from myself through online resources. I hope my fellow developers will collaborate with me in my project-based learning :>
