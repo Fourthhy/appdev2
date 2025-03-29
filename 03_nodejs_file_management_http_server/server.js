@@ -1,13 +1,17 @@
 //import 
 const http = require("http");
+// import http from "http"
 const fs = require("fs");
+// import fs from "fs"
 const path = require("path");
+// import path from "path"
 const url = require("url");
-
-//import Emitter
+// import url from "url"
 const EventEmitter = require("events");
-class FileEventEmitter extends EventEmitter {}
-const fileEvents = new FileEventEmitter();
+//import Emitter
+
+//create fileEvents object
+const fileEvents = new EventEmitter();
 
 //Log file events
 fileEvents.on("fileAction", (message) => {
@@ -15,6 +19,7 @@ fileEvents.on("fileAction", (message) => {
 });
 
 //define server
+
 const server = http.createServer((req, res) => {
   const parsedUrl = url.parse(req.url, true);
   const pathname = parsedUrl.pathname;
