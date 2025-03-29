@@ -28,6 +28,8 @@ const server = http.createServer((req, res) => {
   const actualfilename = parsedUrl.query.filename
   const content = query.content || "no content"; //or pwede ren naman na empty string
 
+  res.setHeader('Content-Type', 'text/plain');
+
   if (!filename && pathname !== "/") {
     res.writeHead(400, { "Content-Type": "text/plain" });
     return res.end("Filename is required!");
@@ -38,10 +40,10 @@ const server = http.createServer((req, res) => {
     case "/create":
       fs.writeFile(filename, content, (err) => {
         if (err) {
-          res.writeHead(500, { "Content-Type": "text/plain" });
+          res.statusCode = 500
           return res.end("Error in creating file");
         }
-        res.writeHead(200, { "Content-Type": "text/plain" });
+        res.statusCode = 200;
         fileEvents.emit("fileAction",  "File created: " + actualfilename); //to prompt response on the cli
         res.end("File " + actualfilename + " created successfully") //to prompt response on the api tester
       });
@@ -50,10 +52,10 @@ const server = http.createServer((req, res) => {
     case "/read":
       fs.readFile(filename, "utf8", (err, data) => {
         if (err) {
-          res.writeHead(404, { "Content-Type": "text/plain" });
+          res.statusCode = 404
           return res.end("File not found");
         }
-        res.writeHead(200, { "Content-Type": "text/plain" });
+        res.statusCode = 200;
         fileEvents.emit("fileaction, File read: " + actualfilename)
         res.end(actualfilename + "says: " + data); 
       });
@@ -62,11 +64,11 @@ const server = http.createServer((req, res) => {
     case "/update":
       fs.appendFile(filename, `\n${content}`, (err) => {
         if (err) {
-          res.writeHead(500, { "Content-Type": "text/plain" });
+          res.statusCode = 500
           return res.end("Error updating file");
         }
         fileEvents.emit("fileAction", `File updated: ${filename}`);
-        res.writeHead(200, { "Content-Type": "text/plain" });
+        res.statusCode = 200;
         res.end("File " + actualfilename + " updated successfully")
       });
       break;
@@ -74,17 +76,17 @@ const server = http.createServer((req, res) => {
     case "/delete":
       fs.unlink(filename, (err) => {
         if (err) {
-          res.writeHead(404, { "Content-Type": "text/plain" });
+          res.statusCode = 404
           return res.end("File not found");
         }
         fileEvents.emit("fileAction", `File deleted: ${filename}`);
-        res.writeHead(200, { "Content-Type": "text/plain" });
+        res.statusCode = 200;
         res.end("File " + actualfilename + " deleted successfully")
       });
       break;
 
     default:
-      res.writeHead(404, { "Content-Type": "text/plain" });
+      res.statusCode = 404
       res.end("Route not found");
   }
 });
