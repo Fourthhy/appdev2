@@ -24,7 +24,7 @@ const server = http.createServer((req, res) => {
   const parsedUrl = url.parse(req.url, true);
   const pathname = parsedUrl.pathname;
   const query = parsedUrl.query;
-  const filename = query.filename ? path.join(__dirname, query.filename) : null;
+  const filename = query.filename ? path.join(__dirname, query.filename) : null; //saayang points
   const actualfilename = parsedUrl.query.filename
   const content = query.content || "no content"; //or pwede ren naman na empty string
 
