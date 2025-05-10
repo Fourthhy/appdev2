@@ -29,7 +29,7 @@ const books = [
     }
 ];
 
-app.use(express.json());
+app.use(express.json()); //Middleware that enables express to use JSON for client input
 
 app.get('/', (req, res) => {
     res.send("Simple Book API using Node.js and Express");
@@ -86,6 +86,7 @@ app.patch('/api/books/:id', (req, res) => {
 app.delete('/api/books/:id', (req, res) => {
     const bookID = parseInt(req.params.id, 10);
     const bookIndex = books.findIndex(b => b.id === bookID);
+    //much better if filter function is used instead of findIndex
     if (bookIndex === -1) {
         return res.status(404).send("404: Book not found");
     }
