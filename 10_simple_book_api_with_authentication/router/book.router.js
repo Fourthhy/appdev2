@@ -6,12 +6,13 @@ const {
     updateBook,
     deleteBook
 } = require('../controller/book.controller');
+const authenticateToken = require('../middleware/jwt-token.middleware');
 const router = express.Router()
 
-router.get("/", getBooks);
-router.get("/:id", getBook);
-router.post("/", createBook);
-router.patch("/:id", updateBook);
-router.delete("/:id", deleteBook);
+router.get("/", authenticateToken, getBooks);
+router.get("/:id", authenticateToken, getBook);
+router.post("/", authenticateToken, createBook);
+router.patch("/:id", authenticateToken, updateBook);
+router.delete("/:id", authenticateToken, deleteBook);
 
 module.exports = router;
